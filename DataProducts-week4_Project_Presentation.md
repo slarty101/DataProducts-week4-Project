@@ -32,12 +32,9 @@ Our highly skilled development engineers have carefully selected a subset of the
 Some of our carefully crafted code and selected data.
 ========================================================
 class:small-code
-```{r, echo=FALSE, message=FALSE}
-#get diamond dataset & dplyr for transforms
-library(ggplot2)
-library(dplyr)
-```
-```{r, echo=TRUE}
+
+
+```r
 #cut down the datset to our required fields
 sparklies <- diamonds[ ,c(1:4,7)]
 #and take a sample
@@ -46,8 +43,18 @@ sparklies <- sparklies[sample(nrow(sparklies), 1000), ]
 ```
 
 
-```{r, size = 'tiny'} 
+
+```r
 str(sparklies)
+```
+
+```
+Classes 'tbl_df', 'tbl' and 'data.frame':	1000 obs. of  5 variables:
+ $ carat  : num  1.03 0.5 1.74 0.51 0.7 0.71 0.32 0.9 0.32 1.52 ...
+ $ cut    : Ord.factor w/ 5 levels "Fair"<"Good"<..: 4 1 3 5 5 5 3 1 5 4 ...
+ $ color  : Ord.factor w/ 7 levels "D"<"E"<"F"<"G"<..: 4 1 5 1 5 5 2 4 4 4 ...
+ $ clarity: Ord.factor w/ 8 levels "I1"<"SI2"<"SI1"<..: 4 3 2 4 3 8 3 1 6 4 ...
+ $ price  : int  6214 1323 10086 1882 2294 3190 672 1939 708 12958 ...
 ```
 
 
